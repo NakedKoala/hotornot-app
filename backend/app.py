@@ -1,4 +1,4 @@
-from flask import Flask, request, json
+from flask import Flask, request, json, render_template
 import logging
 import scipy.stats as stat
 import pandas as pd
@@ -7,7 +7,7 @@ from model import Model
 import tensorflow as tf 
 
 
-app = Flask(__name__, template_folder="../webfronntend/view")
+app = Flask(__name__, template_folder="../webfrontend/view")
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
