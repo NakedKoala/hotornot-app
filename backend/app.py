@@ -5,9 +5,9 @@ import pandas as pd
 from utils import *
 from model import Model
 import tensorflow as tf 
-import time
 
-app = Flask(__name__)
+
+app = Flask(__name__, template_folder="../webfronntend/view")
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -20,6 +20,10 @@ s3 = boto3.resource('s3')
 
 @app.route('/', methods=['GET'])
 def index():
+    return render_template("index.html")
+
+@app.route('/alive', methods=['GET'])
+def alive():
     return "I am Alive"
     
 @app.route('/predict', methods=['POST'])
@@ -27,8 +31,6 @@ def predict():
 
     f = request.files['img_file']
     f.save('./query_img.jpg')
-    time.sleep(1)
-    # wait for save to finish before cv2 tries to read 
     img = cv2.imread('./query_img.jpg')
     faces_coords = detect_face(img, face_classifier)
 
@@ -50,6 +52,6 @@ def predict():
         converted_score = round(stat.percentileofscore(rating_df['Rating'],score) / 10.0 , 1)
         res = { "score": str(converted_score) , "input_thumbnail": object_url }
     return json.dumps(res)
-    
+
 if __name__ == '__main__':
     app.run(host = '0.0.0.0',port=8080)

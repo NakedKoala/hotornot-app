@@ -1,0 +1,44 @@
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='../static/style.css'>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src='../static/client.js'></script>
+</head>
+<body>
+<div>
+    <div class='center'>
+        <div class='title'> 🔥  Hot Or Not  🔥  </div>
+        <p>
+            <img src="https://s3-us-west-2.amazonaws.com/hotornot-bucket/garfield_logo.jpg">
+        </p>
+        <div class='content'>
+            <div class='no-display'>
+                <input id='file-input'
+                       class='no-display'
+                       type='file'
+                       name='img-file'
+                       accept='image/*'
+                       onchange='showPicked(this)'>
+            </div>
+            <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
+            <div class='upload-label'>
+                <label id='upload-label'>No file chosen</label>
+            </div>
+            <div>
+                <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+            </div>
+            <div class='analyze'>
+                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+            </div>
+            <div class='result-label'>
+                <label id='result-label'></label>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
