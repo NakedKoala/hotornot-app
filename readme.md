@@ -7,13 +7,13 @@ Facial beauty classifier trained with 5500 faces from [SCUT-FBP5500](https://arx
  - Inferennce done on AWS EC2 instance
 ## Demo
 
-Attractive
-![alt text](https://s3-us-west-2.amazonaws.com/hotornot-bucket/demo1.png )
+### Attractive
+![alt text](https://s3-us-west-2.amazonaws.com/hotornot-bucket/demo1.png)
 
-Not attractive
+### Not attractive
 ![alt text](https://s3-us-west-2.amazonaws.com/hotornot-bucket/demo3.png)
 
-Non-human
+### Non-human
 ![alt text](https://s3-us-west-2.amazonaws.com/hotornot-bucket/demo4.png)
 
 
