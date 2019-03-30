@@ -7,7 +7,7 @@ from model import Model
 import tensorflow as tf 
 
 
-app = Flask(__name__, template_folder="../webfrontend/view")
+app = Flask(__name__, template_folder="view")
 logging.basicConfig()
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
