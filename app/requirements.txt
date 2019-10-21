@@ -20,7 +20,7 @@ configobj==4.7.2
 docutils==0.14
 durationpy==0.5
 ec2-hibinit-agent==1.0.0
-ecdsa==0.11
+ecdsa==0.13.3
 enum34==1.1.6
 Flask==1.0.2
 funcsigs==1.0.2
